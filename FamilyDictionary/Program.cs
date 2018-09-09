@@ -9,6 +9,7 @@ namespace FamilyDictionary
         {
             // type, which contains a type myFam = new instance of type, which contains a type
             // type Dictionary of string and nested dictionary of string & string named myFam
+            // Dictionary<string, Dictionary<string, string>> myFam = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, Dictionary<string, string>> myFam = new Dictionary<string, Dictionary<string, string>>();
 
             myFam.Add("brother", new Dictionary<string, string>(){
@@ -19,13 +20,13 @@ namespace FamilyDictionary
                 { "name", "Jenny"},
                 { "age", "21" }
             });
-            // myFamily.Add("sister", new Dictionary<string, string>(){
-            //    {"name", "Krista"},
-            //    {"age", "42"}
-            // });
-            //  Next, iterate over each item in myFamily and produce the following output.
 
-            // Krista is my sister and is 42 years old
+            foreach(var i in myFam)
+            {
+                Console.WriteLine($"{i.Value["name"]} is my {i.Key} and is {i.Value["age"]} years old");
+            }
+
+            Console.ReadLine();
         }
     }
 }
